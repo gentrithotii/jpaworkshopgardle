@@ -5,13 +5,14 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface DetailsRepository extends CrudRepository<Details, Long>{
+public interface DetailsRepository extends CrudRepository<Details, Long> {
     Optional<Details> findDetailsByEmail(String email);
 
-    Collection<Details> findDetailsByNameContains(String name);
+    List<Details> findDetailsByNameContains(String name);
 
-    Collection<Details> findDetailsByNameIgnoreCase(String name);
+    List<Details> findDetailsByNameIgnoreCase(String name);
 }

@@ -6,16 +6,18 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface AppUserRepository extends CrudRepository<AppUser, Long> {
     Optional<AppUser> findAppUserByUsername(String username);
 
-    Collection<AppUser> findAppUserByRegDateBetween(LocalDate regDateAfter, LocalDate regDateBefore);
+    List<AppUser> findAppUserByRegDateBetween(LocalDate regDateAfter, LocalDate regDateBefore);
 
     Optional<AppUser> findAppUserByUserDetails_Id(long userDetailsId);
 
     Optional<AppUser> findAppUserByUserDetails_EmailIgnoreCase(String userDetailsEmail);
 
+    Optional<AppUser> findAppUserById(long id);
 }
