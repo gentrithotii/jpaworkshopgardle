@@ -1,4 +1,4 @@
-package com.gentrit.jpaworkshopgardle.service;
+package com.gentrit.jpaworkshopgardle.repository;
 
 import com.gentrit.jpaworkshopgardle.entity.Details;
 import org.springframework.data.repository.CrudRepository;
@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 @Repository
-public interface DetailsService extends CrudRepository<Details, Long>{
+public interface DetailsRepository extends CrudRepository<Details, Long>{
     Optional<Details> findDetailsByEmail(String email);
 
     Collection<Details> findDetailsByNameContains(String name);

@@ -1,4 +1,4 @@
-package com.gentrit.jpaworkshopgardle.service;
+package com.gentrit.jpaworkshopgardle.repository;
 
 import com.gentrit.jpaworkshopgardle.entity.AppUser;
 import org.springframework.data.repository.CrudRepository;
@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 @Repository
-public interface AppUserService extends CrudRepository<AppUser, Long> {
+public interface AppUserRepository extends CrudRepository<AppUser, Long> {
     Optional<AppUser> findAppUserByUsername(String username);
 
     Collection<AppUser> findAppUserByRegDateBetween(LocalDate regDateAfter, LocalDate regDateBefore);
