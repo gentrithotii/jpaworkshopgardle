@@ -1,4 +1,7 @@
 package com.gentrit.jpaworkshopgardle.service;
 
-public interface AppUserService {
+import com.gentrit.jpaworkshopgardle.entity.AppUser;
+import org.springframework.data.repository.CrudRepository;
+
+public interface AppUserService extends CrudRepository<AppUser, Long> {
 }

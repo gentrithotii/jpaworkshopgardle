@@ -1,4 +1,7 @@
 package com.gentrit.jpaworkshopgardle.service;
 
-public class DetailsService {
+import com.gentrit.jpaworkshopgardle.entity.Details;
+import org.springframework.data.repository.CrudRepository;
+
+public interface DetailsService extends CrudRepository<Details, Long>{
 }
