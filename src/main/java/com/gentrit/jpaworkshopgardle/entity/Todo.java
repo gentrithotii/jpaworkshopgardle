@@ -3,8 +3,6 @@ package com.gentrit.jpaworkshopgardle.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Getter
-@Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,7 +16,13 @@ public class Todo {
     @Column(nullable = false, updatable = false)
     private long id;
 
+
+    @Getter
+    @Setter
     private String description;
+
+    @Getter
+    @Setter
     private boolean completeStatus;
 
     @ManyToOne()
