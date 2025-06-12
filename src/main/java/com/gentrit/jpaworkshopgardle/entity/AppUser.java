@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @ToString
 @NoArgsConstructor
@@ -15,7 +17,7 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
-    @Column(updatable = false, nullable = false, name = "app_user_id")
+    @Column(updatable = false, nullable = false)
     private long id;
 
     @Getter
@@ -34,6 +36,9 @@ public class AppUser {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "details_id")
     private Details userDetails;
+
+    @OneToMany(mappedBy = "appUser")
+    List<Todo> todoList = new ArrayList<>();
 
     public AppUser(String username, String password, LocalDate regDate, Details userDetails) {
         this.username = username;
